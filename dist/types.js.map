@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/types.ts"],
+  "sourcesContent": ["export enum MarkdownElementBlockType {\n  Header = 'Header',\n  Paragraph = 'Paragraph',\n}\nexport enum MarkdownElementInlineType {\n  Strong,\n  Text,\n}\n\nexport interface MarkdownElement {\n  type: MarkdownElementBlockType | MarkdownElementInlineType;\n  raw: string;\n}\n\nexport type MarkdownInlineElement = {\n  type: MarkdownElementInlineType;\n  content: string;\n};\n\nexport interface MarkdownBlockElement extends MarkdownElement {\n  raw: string;\n  content: MarkdownInlineElement[];\n  type: MarkdownElementBlockType;\n}\n\nexport interface MarkdownHeaderBlockElement extends MarkdownBlockElement {\n  level: number;\n  type: MarkdownElementBlockType.Header;\n}\n\nexport interface MarkdownParagraphBlockElement extends MarkdownBlockElement {\n  type: MarkdownElementBlockType.Paragraph;\n}\n\nexport interface State {\n  raw: string[];\n  blocks: MarkdownBlockElement[];\n  line: number;\n}\n\nexport interface InlineState {\n  raw: string[];\n  blocks: MarkdownInlineElement[];\n  line: number;\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAO,IAAK,2BAAL,kBAAK,8BAAL;AACL,wCAAS;AACT,2CAAY;AAFF;AAAA;AAIL,IAAK,4BAAL,kBAAK,+BAAL;AACL;AACA;AAFU;AAAA;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/inline/strong.ts"],
+  "sourcesContent": ["export default function strong() {}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAe,kBAAkB;AAAC;",
+  "names": []
+}

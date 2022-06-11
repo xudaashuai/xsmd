@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/block/paragraph.ts"],
+  "sourcesContent": ["import {\n  State,\n  MarkdownHeaderBlockElement,\n  MarkdownParagraphBlockElement,\n  MarkdownElementBlockType,\n} from '../types';\n\nexport function paragraph(state: State) {\n  let line = state.line;\n  let content = [];\n  while (line < state.raw.length) {\n    if (state.raw[line].trim().length === 0) {\n      break;\n    } else {\n      content.push(state.raw[line]);\n    }\n    line += 1;\n  }\n  let block: MarkdownParagraphBlockElement = {\n    type: MarkdownElementBlockType.Paragraph,\n    content: [],\n    raw: content.join('\\n'),\n  };\n  state.blocks.push(block);\n  state.line = line;\n\n  return true;\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,mBAKO;AAEA,mBAAmB,OAAc;AACtC,MAAI,OAAO,MAAM;AACjB,MAAI,UAAU,CAAC;AACf,SAAO,OAAO,MAAM,IAAI,QAAQ;AAC9B,QAAI,MAAM,IAAI,MAAM,KAAK,EAAE,WAAW,GAAG;AACvC;AAAA,IACF,OAAO;AACL,cAAQ,KAAK,MAAM,IAAI,KAAK;AAAA,IAC9B;AACA,YAAQ;AAAA,EACV;AACA,MAAI,QAAuC;AAAA,IACzC,MAAM,sCAAyB;AAAA,IAC/B,SAAS,CAAC;AAAA,IACV,KAAK,QAAQ,KAAK,IAAI;AAAA,EACxB;AACA,QAAM,OAAO,KAAK,KAAK;AACvB,QAAM,OAAO;AAEb,SAAO;AACT;",
+  "names": []
+}

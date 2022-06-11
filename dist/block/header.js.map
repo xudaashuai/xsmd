@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/block/header.ts"],
+  "sourcesContent": ["import {\n  State,\n  MarkdownHeaderBlockElement,\n  MarkdownElementBlockType,\n} from '../types';\n\nexport function header(state: State) {\n  let line = state.raw[state.line];\n  let reg = /\\s*(#+)\\s+(.+)/;\n  let [, level, content] = line.match(reg) || [];\n  console.log(level, content);\n  if (!level || level.length > 6) {\n    return false;\n  }\n\n  let block: MarkdownHeaderBlockElement = {\n    type: MarkdownElementBlockType.Header,\n    level: level.length,\n    content: [],\n    raw: content,\n  };\n\n  state.blocks.push(block);\n  state.line = state.line + 1;\n\n  return true;\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,mBAIO;AAEA,gBAAgB,OAAc;AACnC,MAAI,OAAO,MAAM,IAAI,MAAM;AAC3B,MAAI,MAAM;AACV,MAAI,CAAC,EAAE,OAAO,WAAW,KAAK,MAAM,GAAG,KAAK,CAAC;AAC7C,UAAQ,IAAI,OAAO,OAAO;AAC1B,MAAI,CAAC,SAAS,MAAM,SAAS,GAAG;AAC9B,WAAO;AAAA,EACT;AAEA,MAAI,QAAoC;AAAA,IACtC,MAAM,sCAAyB;AAAA,IAC/B,OAAO,MAAM;AAAA,IACb,SAAS,CAAC;AAAA,IACV,KAAK;AAAA,EACP;AAEA,QAAM,OAAO,KAAK,KAAK;AACvB,QAAM,OAAO,MAAM,OAAO;AAE1B,SAAO;AACT;",
+  "names": []
+}

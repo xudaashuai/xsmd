@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/parser.ts"],
+  "sourcesContent": ["import { State } from './types';\nimport { header } from './block/header';\nimport { paragraph } from './block/paragraph';\nlet blockRules = [\n  header,\n  // should be last rule\n  paragraph,\n];\n\nfunction praseBlock(state: State) {\n  while (state.line < state.raw.length) {\n    for (let rule of blockRules) {\n      if (rule(state)) {\n        break;\n      }\n    }\n  }\n}\n\nexport default function parse(data: string[]) {\n  let state: State = {\n    raw: data,\n    line: 0,\n    blocks: [],\n  };\n\n  praseBlock(state);\n\n  return state.blocks;\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AACA,oBAAuB;AACvB,uBAA0B;AAC1B,IAAI,aAAa;AAAA,EACf;AAAA,EAEA;AACF;AAEA,oBAAoB,OAAc;AAChC,SAAO,MAAM,OAAO,MAAM,IAAI,QAAQ;AACpC,aAAS,QAAQ,YAAY;AAC3B,UAAI,KAAK,KAAK,GAAG;AACf;AAAA,MACF;AAAA,IACF;AAAA,EACF;AACF;AAEe,eAAe,MAAgB;AAC5C,MAAI,QAAe;AAAA,IACjB,KAAK;AAAA,IACL,MAAM;AAAA,IACN,QAAQ,CAAC;AAAA,EACX;AAEA,aAAW,KAAK;AAEhB,SAAO,MAAM;AACf;",
+  "names": []
+}

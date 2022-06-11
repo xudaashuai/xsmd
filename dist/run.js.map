@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/run.ts"],
+  "sourcesContent": ["import { parse } from './index';\n\nconsole.log(parse(['  ### 123123', '123123123']));\n"],
+  "mappings": "AAAA,mBAAsB;AAEtB,QAAQ,IAAI,wBAAM,CAAC,gBAAgB,WAAW,CAAC,CAAC;",
+  "names": []
+}
